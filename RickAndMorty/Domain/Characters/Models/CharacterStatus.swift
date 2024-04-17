@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum CharacterStatus: String, CaseIterable, Identifiable {
-    case alive
-    case dead
-    case unknown
-    case all
+enum CharacterStatus: String, CaseIterable, Identifiable, Codable {
+    case alive = "alive"
+    case dead = "dead"
+    case unknown = "unknown"
+    case all = ""
     
     var id: Self { self }
 
