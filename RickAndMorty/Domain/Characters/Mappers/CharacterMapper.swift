@@ -23,7 +23,8 @@ class CharacterMapper {
             location: dto.location?.name ?? "",
             image: dto.image ?? "",
             url: dto.url ?? "",
-            episode: []
+            episode: [],
+            created: dto.created ?? ""
         )
     }
 }

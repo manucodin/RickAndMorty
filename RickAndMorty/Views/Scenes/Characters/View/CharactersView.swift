@@ -17,8 +17,12 @@ struct CharactersView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.characters) { character in
-                Text(character.name).onAppear {
-                    viewModel.loadCharacters(currentItem: character)
+                NavigationLink {
+                    Text("Test")
+                } label: {
+                    CharacterItemView(character: character).onAppear {
+                        viewModel.loadCharacters(currentItem: character)
+                    }
                 }
             }
             .onAppear {
