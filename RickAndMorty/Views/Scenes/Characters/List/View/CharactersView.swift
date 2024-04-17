@@ -29,13 +29,28 @@ struct CharactersView: View {
                 viewModel.loadCharacters(currentItem: nil)
             }
             .navigationTitle(RickMortyTabItem.characters.title)
+            .searchable(
+                text: $viewModel.searchValue,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: String(localized: "search_prompt_characters")
+            )
+            .autocorrectionDisabled()
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu(content: {
+                        Picker(selection: $viewModel.characterStatus) {
+                            ForEach(CharacterStatus.allCases) { status in
+                                Text(status.title)
+                            }
+                        } label: {
+                            Text("sort_by")
+                        }
+                    }, label: {
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                    })
+                }
+            }
         }
-        .searchable(
-            text: $viewModel.searchValue,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: String(localized: "search_prompt_characters")
-        )
-        .autocorrectionDisabled()
         .tabItem {
             Label(
                 RickMortyTabItem.characters.title,

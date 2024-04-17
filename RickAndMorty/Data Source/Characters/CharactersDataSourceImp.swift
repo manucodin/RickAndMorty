@@ -16,6 +16,10 @@ class CharactersDataSourceImp: CharactersDataSource {
     }
     
     func getCharacters(page: Int) async throws -> [Character] {
-        return try await apiClient.getCharacters(page: page).results?.compactMap(CharacterMapper.transform) ?? []
+        return try await apiClient.getCharacters(query: CharactersQueryDTO(page: page)).results?.compactMap(CharacterMapper.transform) ?? []
+    }
+    
+    func searchCharacter(query: CharactersQueryDTO) async throws -> [Character] {
+        return try await apiClient.getCharacters(query: query).results?.compactMap(CharacterMapper.transform) ?? []
     }
 }

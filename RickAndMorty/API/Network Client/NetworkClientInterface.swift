@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkClientInterface {
-    func get<T: Codable>(service: APIServiceRepresentable, parameters: [String: Any]?) async throws -> T
+    func get<T: Codable, P: Codable>(service: APIServiceRepresentable, parameters: P?) async throws -> T
 }
