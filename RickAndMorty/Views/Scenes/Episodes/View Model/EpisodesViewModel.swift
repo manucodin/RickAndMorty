@@ -12,7 +12,6 @@ class EpisodesViewModel: ObservableObject {
     @Published var searchValue: String = ""
 
     @Published private(set) var episodes: [Episode] = []
-    @Published private(set) var errorMessage: AppError? = nil
     @Published private(set) var hasError: Bool = false
     
     private(set) var currentPage: Int = 1
@@ -49,7 +48,7 @@ class EpisodesViewModel: ObservableObject {
         }
     }
     
-    private func showError(_ error: AppError) {
+    private func showError() {
         hasError.toggle()
     }
 }

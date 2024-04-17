@@ -9,4 +9,5 @@ import Foundation
 
 protocol CharactersDataSource {
     func getCharacters(page: Int) async throws -> [Character]
+    func searchCharacter(query: CharactersQueryDTO) async throws -> [Character]
 }

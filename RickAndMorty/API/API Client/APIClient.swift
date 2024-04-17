@@ -14,8 +14,8 @@ class APIClient: APIClientInterface {
         self.networkClient = networkClient
     }
     
-    func getCharacters(page: Int = 1) async throws -> CharactersListDTO {
-        return try await networkClient.get(service: APIServices.characters, parameters: ["page": page])
+    func getCharacters(query: CharactersQueryDTO) async throws -> CharactersListDTO {
+        return try await networkClient.get(service: APIServices.characters, parameters: query)
     }
     
     func getEpisodes(page: Int = 1) async throws -> EpisodeListDTO {
