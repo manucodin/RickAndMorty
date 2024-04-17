@@ -11,9 +11,10 @@ import Combine
 class CharactersViewModel: ObservableObject {
     @Published var searchValue: String = ""
     @Published var characterStatus: CharacterStatus = .all
-    
+    @Published var errorMessage: String = ""
+    @Published var showError: Bool = false
+
     @Published private(set) var characters: [Character] = []
-    @Published private(set) var hasError: Bool = false
         
     private var currentPage: Int = 1
     private var isContentEnabled: Bool = true
@@ -45,7 +46,7 @@ class CharactersViewModel: ObservableObject {
                 let results = try await SearchCharacter().searchCharacter(name: name, status: status)
                 self.characters = results
             } catch let error {
-                showError()
+                showError(error)
             }
         }
     }
@@ -61,7 +62,7 @@ class CharactersViewModel: ObservableObject {
                 currentPage+=1
                 isContentEnabled = !newCharacters.isEmpty
             } catch let error {
-                debugPrint(error.localizedDescription)
+                showError(error)
             }
         }
     }
@@ -77,7 +78,8 @@ class CharactersViewModel: ObservableObject {
         return false
     }
     
-    private func showError() {
-        hasError.toggle()
+    private func showError(_ error: Error) {
+        errorMessage = error.localizedDescription
+        showError.toggle()
     }
 }

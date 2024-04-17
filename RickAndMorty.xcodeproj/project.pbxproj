@@ -52,6 +52,7 @@
 		544E685F2BD06A83001266B4 /* SearchCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E685E2BD06A83001266B4 /* SearchCharacter.swift */; };
 		544E68612BD06D71001266B4 /* CharactersQueryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E68602BD06D71001266B4 /* CharactersQueryDTO.swift */; };
 		544E68632BD07433001266B4 /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E68622BD07433001266B4 /* CharacterStatus.swift */; };
+		549C25562BD07FE30074C600 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549C25552BD07FE30074C600 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		544E685E2BD06A83001266B4 /* SearchCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCharacter.swift; sourceTree = "<group>"; };
 		544E68602BD06D71001266B4 /* CharactersQueryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersQueryDTO.swift; sourceTree = "<group>"; };
 		544E68622BD07433001266B4 /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
+		549C25552BD07FE30074C600 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,14 +172,14 @@
 		540BBBF12BD03859008315D5 /* RickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				540BBC3C2BD0417F008315D5 /* API */,
 				540BBC5B2BD04971008315D5 /* Data Source */,
 				540BBC582BD04944008315D5 /* Use Cases */,
-				540BBC3C2BD0417F008315D5 /* API */,
-				540BBC2A2BD03D84008315D5 /* Localizables */,
-				540BBC292BD03D72008315D5 /* Resources */,
 				540BBC1F2BD03B05008315D5 /* Domain */,
 				540BBC1C2BD039EE008315D5 /* Views */,
 				540BBBF22BD03859008315D5 /* RickAndMortyApp.swift */,
+				540BBC2A2BD03D84008315D5 /* Localizables */,
+				540BBC292BD03D72008315D5 /* Resources */,
 				540BBBF82BD0385A008315D5 /* Preview Content */,
 			);
 			path = RickAndMorty;
@@ -221,6 +223,7 @@
 		540BBC1F2BD03B05008315D5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				549C25542BD07FB70074C600 /* Errors */,
 				540BBC392BD0408B008315D5 /* Episodes */,
 				540BBC362BD0405B008315D5 /* Characters */,
 				540BBC332BD04031008315D5 /* Tab Item */,
@@ -568,6 +571,14 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		549C25542BD07FB70074C600 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				549C25552BD07FE30074C600 /* AppError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -723,6 +734,7 @@
 				540BBC5F2BD0498B008315D5 /* CharactersDataSourceImp.swift in Sources */,
 				544E68632BD07433001266B4 /* CharacterStatus.swift in Sources */,
 				540BBC632BD04A18008315D5 /* CharacterMapper.swift in Sources */,
+				549C25562BD07FE30074C600 /* AppError.swift in Sources */,
 				544E685B2BD0684D001266B4 /* CharactersDetailView.swift in Sources */,
 				540BBC352BD04047008315D5 /* TabItemRepresentable.swift in Sources */,
 				540BBC842BD05D1A008315D5 /* Character+PreviewContent.swift in Sources */,
