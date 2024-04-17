@@ -10,7 +10,8 @@ import Combine
 
 class CharactersViewModel: ObservableObject {
     @Published var searchValue: String = ""
-
+    @Published var characterStatus: CharacterStatus = .all
+    
     @Published private(set) var characters: [Character] = []
     @Published private(set) var hasError: Bool = false
         
@@ -27,14 +28,21 @@ class CharactersViewModel: ObservableObject {
             })
             .compactMap{ $0 }
             .sink { [self] searchValue in
-                self.searchCharacter(withName: searchValue)
-            }.store(in: &subscription)
+                self.searchCharacter(withName: searchValue, status: characterStatus)
+            }
+            .store(in: &subscription)
+        
+        $characterStatus
+            .sink { [self] status in
+                self.searchCharacter(withName: self.searchValue, status: status)
+            }
+            .store(in: &subscription)
     }
     
-    func searchCharacter(withName name: String) {
+    func searchCharacter(withName name: String, status: CharacterStatus) {
         Task { @MainActor in
             do {
-                let results = try await SearchCharacter().searchCharacter(name: name)
+                let results = try await SearchCharacter().searchCharacter(name: name, status: status)
                 self.characters = results
             } catch let error {
                 showError()

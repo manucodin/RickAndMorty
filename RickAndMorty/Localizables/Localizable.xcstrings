@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "alive" : {
+
+    },
+    "all" : {
+
+    },
     "characters" : {
       "localizations" : {
         "en" : {
@@ -16,6 +22,9 @@
           }
         }
       }
+    },
+    "dead" : {
+
     },
     "episodes" : {
       "localizations" : {
@@ -68,7 +77,13 @@
         }
       }
     },
+    "sort_by" : {
+
+    },
     "Test" : {
+
+    },
+    "unknown" : {
 
     }
   },

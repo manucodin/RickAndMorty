@@ -51,6 +51,7 @@
 		544E685B2BD0684D001266B4 /* CharactersDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E685A2BD0684D001266B4 /* CharactersDetailView.swift */; };
 		544E685F2BD06A83001266B4 /* SearchCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E685E2BD06A83001266B4 /* SearchCharacter.swift */; };
 		544E68612BD06D71001266B4 /* CharactersQueryDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E68602BD06D71001266B4 /* CharactersQueryDTO.swift */; };
+		544E68632BD07433001266B4 /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544E68622BD07433001266B4 /* CharacterStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		544E685A2BD0684D001266B4 /* CharactersDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDetailView.swift; sourceTree = "<group>"; };
 		544E685E2BD06A83001266B4 /* SearchCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCharacter.swift; sourceTree = "<group>"; };
 		544E68602BD06D71001266B4 /* CharactersQueryDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersQueryDTO.swift; sourceTree = "<group>"; };
+		544E68622BD07433001266B4 /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				540BBC372BD0406C008315D5 /* Character.swift */,
+				544E68622BD07433001266B4 /* CharacterStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				540BBC432BD04259008315D5 /* NetworkClient.swift in Sources */,
 				540BBC1E2BD03A59008315D5 /* RootView.swift in Sources */,
 				540BBC5F2BD0498B008315D5 /* CharactersDataSourceImp.swift in Sources */,
+				544E68632BD07433001266B4 /* CharacterStatus.swift in Sources */,
 				540BBC632BD04A18008315D5 /* CharacterMapper.swift in Sources */,
 				544E685B2BD0684D001266B4 /* CharactersDetailView.swift in Sources */,
 				540BBC352BD04047008315D5 /* TabItemRepresentable.swift in Sources */,

@@ -15,7 +15,7 @@ class SearchCharacter {
         self.dataSource = dataSource
     }
     
-    func searchCharacter(name: String) async throws -> [Character] {
+    func searchCharacter(name: String, status: CharacterStatus) async throws -> [Character] {
         return try await dataSource.searchCharacter(query: CharactersQueryDTO(name: name))
     }
 }
