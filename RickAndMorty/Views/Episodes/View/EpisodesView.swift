@@ -15,23 +15,30 @@ struct EpisodesView: View {
     }
     
     var body: some View {
-        Group {
+        NavigationStack {
             List(viewModel.episodes) { episode in
                 Text(episode.name).onAppear {
                     viewModel.loadEpisodes(currentItem: episode)
                 }
             }
+            .onAppear {
+                viewModel.loadEpisodes(currentItem: nil)
+            }
+            .navigationTitle(RickMortyTabItem.episodes.title)
         }
-        .onAppear {
-            viewModel.loadEpisodes(currentItem: nil)
-        }
+        .searchable(
+            text: $viewModel.searchValue,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: String(localized: "search_prompt_episodes")
+        )
+        .autocorrectionDisabled()
         .tabItem {
             Label(
-                RickMortyTabItem.characters.title,
-                systemImage: RickMortyTabItem.characters.systemImage
+                RickMortyTabItem.episodes.title,
+                systemImage: RickMortyTabItem.episodes.systemImage
             )
         }
-        .tag(RickMortyTabItem.characters)
+        .tag(RickMortyTabItem.episodes)
     }
 }
 

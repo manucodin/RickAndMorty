@@ -15,16 +15,23 @@ struct CharactersView: View {
     }
     
     var body: some View {
-        Group {
+        NavigationStack {
             List(viewModel.characters) { character in
                 Text(character.name).onAppear {
                     viewModel.loadCharacters(currentItem: character)
                 }
             }
+            .onAppear {
+                viewModel.loadCharacters(currentItem: nil)
+            }
+            .navigationTitle(RickMortyTabItem.characters.title)
         }
-        .onAppear {
-            viewModel.loadCharacters(currentItem: nil)
-        }
+        .searchable(
+            text: $viewModel.searchValue,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: String(localized: "search_prompt_characters")
+        )
+        .autocorrectionDisabled()
         .tabItem {
             Label(
                 RickMortyTabItem.characters.title,

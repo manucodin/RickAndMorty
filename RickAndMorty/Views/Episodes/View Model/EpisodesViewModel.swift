@@ -9,11 +9,11 @@ import Foundation
 import Combine
 
 class EpisodesViewModel: ObservableObject {
-    
+    @Published var searchValue: String = ""
+
     @Published private(set) var episodes: [Episode] = []
     @Published private(set) var errorMessage: AppError? = nil
     @Published private(set) var hasError: Bool = false
-    
     
     private(set) var currentPage: Int = 1
     private var canLoadMorePages: Bool = true

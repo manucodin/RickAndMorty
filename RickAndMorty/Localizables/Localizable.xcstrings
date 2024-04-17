@@ -32,6 +32,38 @@
           }
         }
       }
+    },
+    "search_prompt_characters" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search character"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscar personaje"
+          }
+        }
+      }
+    },
+    "search_prompt_episodes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search episode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Buscar capítulo"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
