@@ -18,7 +18,7 @@ struct CharactersView: View {
         NavigationStack {
             List(viewModel.characters) { character in
                 NavigationLink {
-                    Text("Test")
+                    CharactersDetailView(character: character)
                 } label: {
                     CharacterItemView(character: character).onAppear {
                         viewModel.loadCharacters(currentItem: character)
@@ -29,6 +29,11 @@ struct CharactersView: View {
                 viewModel.loadCharacters(currentItem: nil)
             }
             .navigationTitle(RickMortyTabItem.characters.title)
+            .alert("error", isPresented: $viewModel.showError, actions: {
+                Button("accept", role: .cancel) {}
+            }, message: {
+                Text(viewModel.errorMessage)
+            })
             .searchable(
                 text: $viewModel.searchValue,
                 placement: .navigationBarDrawer(displayMode: .always),
@@ -43,7 +48,7 @@ struct CharactersView: View {
                                 Text(status.title)
                             }
                         } label: {
-                            Text("sort_by")
+                            Text("filter_by")
                         }
                     }, label: {
                         Image(systemName: "line.3.horizontal.decrease.circle")

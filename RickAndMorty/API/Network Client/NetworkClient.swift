@@ -10,6 +10,18 @@ import Alamofire
 
 class NetworkClient: NetworkClientInterface {
     func get<T: Codable, P: Codable>(service: APIServiceRepresentable, parameters: P? = nil) async throws -> T {
-        return try await AF.request(service.path, method: .get, parameters: parameters).validate().serializingDecodable(T.self).value
+        do {
+            return try await AF.request(service.path, method: .get, parameters: parameters).serializingDecodable(T.self).value
+        } catch let error {
+            if error.asAFError?.isResponseSerializationError ?? false {
+                throw AppError.responseError
+            }
+            
+            if error.asAFError?.isSessionTaskError ?? false {
+                throw AppError.networkError
+            }
+            
+            throw AppError.unknowError
+        }
     }
 }

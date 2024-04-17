@@ -10,9 +10,10 @@ import Combine
 
 class EpisodesViewModel: ObservableObject {
     @Published var searchValue: String = ""
-
+    @Published var errorMessage: String = ""
+    @Published var showError: Bool = false
+    
     @Published private(set) var episodes: [Episode] = []
-    @Published private(set) var hasError: Bool = false
     
     private(set) var currentPage: Int = 1
     private var canLoadMorePages: Bool = true
@@ -43,12 +44,13 @@ class EpisodesViewModel: ObservableObject {
                 currentPage+=1
                 canLoadMorePages = !newPage.isEmpty
             } catch let error {
-                debugPrint(error.localizedDescription)
+                showError(error)
             }
         }
     }
     
-    private func showError() {
-        hasError.toggle()
+    private func showError(_ error: Error) {
+        errorMessage = error.localizedDescription
+        showError.toggle()
     }
 }

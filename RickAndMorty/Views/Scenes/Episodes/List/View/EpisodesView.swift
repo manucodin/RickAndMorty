@@ -26,6 +26,9 @@ struct EpisodesView: View {
             }
             .navigationTitle(RickMortyTabItem.episodes.title)
         }
+        .alert(viewModel.errorMessage, isPresented: $viewModel.showError) {
+            Button("accept", role: .cancel) {}
+        }
         .searchable(
             text: $viewModel.searchValue,
             placement: .navigationBarDrawer(displayMode: .always),
