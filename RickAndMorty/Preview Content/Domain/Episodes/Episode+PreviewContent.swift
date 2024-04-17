@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+extension Episode {
+    static var test: Episode {
+        return Episode(
+            id: 1,
+            name: "Pilot",
+            episode: "S01E01",
+            airDate: "December 2, 2013",
+            characters: []
+        )
+    }
+}

@@ -248,8 +248,7 @@
 		540BBC242BD03BCA008315D5 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
-				540BBC2E2BD03F3F008315D5 /* View Model */,
-				540BBC2D2BD03ECF008315D5 /* View */,
+				547929842BD07AA500F92F4F /* List */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -558,6 +557,15 @@
 				540BBC6E2BD05210008315D5 /* GetAllEpisodes.swift */,
 			);
 			path = Episodes;
+			sourceTree = "<group>";
+		};
+		547929842BD07AA500F92F4F /* List */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC2E2BD03F3F008315D5 /* View Model */,
+				540BBC2D2BD03ECF008315D5 /* View */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

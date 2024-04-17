@@ -17,7 +17,7 @@ struct EpisodesView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.episodes) { episode in
-                Text(episode.name).onAppear {
+                EpisodeItemView(episode: episode).onAppear {
                     viewModel.loadEpisodes(currentItem: episode)
                 }
             }
