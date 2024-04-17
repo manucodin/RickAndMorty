@@ -11,7 +11,9 @@ import SwiftUI
 struct RickAndMortyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                RootView()
+            }
         }
     }
 }
