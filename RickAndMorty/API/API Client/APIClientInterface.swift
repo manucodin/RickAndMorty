@@ -9,4 +9,5 @@ import Foundation
 
 protocol APIClientInterface {
     func getCharacters(page: Int) async throws -> CharactersListDTO
+    func getEpisodes(page: Int) async throws -> EpisodeListDTO
 }

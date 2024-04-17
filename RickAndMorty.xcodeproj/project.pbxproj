@@ -37,6 +37,13 @@
 		540BBC5F2BD0498B008315D5 /* CharactersDataSourceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC5E2BD0498B008315D5 /* CharactersDataSourceImp.swift */; };
 		540BBC632BD04A18008315D5 /* CharacterMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC622BD04A18008315D5 /* CharacterMapper.swift */; };
 		540BBC662BD04F14008315D5 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC652BD04F14008315D5 /* AppError.swift */; };
+		540BBC692BD050D9008315D5 /* EpisodeDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC682BD050D9008315D5 /* EpisodeDTO.swift */; };
+		540BBC6B2BD050E2008315D5 /* EpisodeListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC6A2BD050E2008315D5 /* EpisodeListDTO.swift */; };
+		540BBC6D2BD051C2008315D5 /* EpisodesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC6C2BD051C2008315D5 /* EpisodesViewModel.swift */; };
+		540BBC6F2BD05210008315D5 /* GetAllEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC6E2BD05210008315D5 /* GetAllEpisodes.swift */; };
+		540BBC732BD0523F008315D5 /* EpisodesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC722BD0523F008315D5 /* EpisodesDataSource.swift */; };
+		540BBC752BD05261008315D5 /* EpisodesDataSourceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC742BD05261008315D5 /* EpisodesDataSourceImp.swift */; };
+		540BBC792BD052CD008315D5 /* EpisodeMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC782BD052CD008315D5 /* EpisodeMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +96,13 @@
 		540BBC5E2BD0498B008315D5 /* CharactersDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDataSourceImp.swift; sourceTree = "<group>"; };
 		540BBC622BD04A18008315D5 /* CharacterMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapper.swift; sourceTree = "<group>"; };
 		540BBC652BD04F14008315D5 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		540BBC682BD050D9008315D5 /* EpisodeDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDTO.swift; sourceTree = "<group>"; };
+		540BBC6A2BD050E2008315D5 /* EpisodeListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListDTO.swift; sourceTree = "<group>"; };
+		540BBC6C2BD051C2008315D5 /* EpisodesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewModel.swift; sourceTree = "<group>"; };
+		540BBC6E2BD05210008315D5 /* GetAllEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEpisodes.swift; sourceTree = "<group>"; };
+		540BBC722BD0523F008315D5 /* EpisodesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesDataSource.swift; sourceTree = "<group>"; };
+		540BBC742BD05261008315D5 /* EpisodesDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesDataSourceImp.swift; sourceTree = "<group>"; };
+		540BBC782BD052CD008315D5 /* EpisodeMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +266,7 @@
 		540BBC2E2BD03F3F008315D5 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				540BBC6C2BD051C2008315D5 /* EpisodesViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -293,7 +308,8 @@
 		540BBC392BD0408B008315D5 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
-				540BBC3A2BD04095008315D5 /* Episode.swift */,
+				540BBC772BD052C1008315D5 /* Mappers */,
+				540BBC762BD052B8008315D5 /* Models */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -330,6 +346,7 @@
 		540BBC4A2BD043C7008315D5 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				540BBC672BD050A5008315D5 /* Episodes */,
 				540BBC502BD0450A008315D5 /* List Info */,
 				540BBC4F2BD04502008315D5 /* Characters */,
 			);
@@ -366,6 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				540BBC592BD04960008315D5 /* GetAllCharacters.swift */,
+				540BBC6E2BD05210008315D5 /* GetAllEpisodes.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -373,8 +391,8 @@
 		540BBC5B2BD04971008315D5 /* Data Source */ = {
 			isa = PBXGroup;
 			children = (
-				540BBC5C2BD04980008315D5 /* CharactersDataSource.swift */,
-				540BBC5E2BD0498B008315D5 /* CharactersDataSourceImp.swift */,
+				540BBC712BD0522D008315D5 /* Episodes */,
+				540BBC702BD05222008315D5 /* Characters */,
 			);
 			path = "Data Source";
 			sourceTree = "<group>";
@@ -401,6 +419,49 @@
 				540BBC652BD04F14008315D5 /* AppError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		540BBC672BD050A5008315D5 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC682BD050D9008315D5 /* EpisodeDTO.swift */,
+				540BBC6A2BD050E2008315D5 /* EpisodeListDTO.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		540BBC702BD05222008315D5 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC5C2BD04980008315D5 /* CharactersDataSource.swift */,
+				540BBC5E2BD0498B008315D5 /* CharactersDataSourceImp.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		540BBC712BD0522D008315D5 /* Episodes */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC722BD0523F008315D5 /* EpisodesDataSource.swift */,
+				540BBC742BD05261008315D5 /* EpisodesDataSourceImp.swift */,
+			);
+			path = Episodes;
+			sourceTree = "<group>";
+		};
+		540BBC762BD052B8008315D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC3A2BD04095008315D5 /* Episode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		540BBC772BD052C1008315D5 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				540BBC782BD052CD008315D5 /* EpisodeMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +608,8 @@
 				540BBC492BD0439D008315D5 /* APIClientInterface.swift in Sources */,
 				540BBC5D2BD04980008315D5 /* CharactersDataSource.swift in Sources */,
 				540BBC472BD0433C008315D5 /* NetworkClientInterface.swift in Sources */,
+				540BBC732BD0523F008315D5 /* EpisodesDataSource.swift in Sources */,
+				540BBC752BD05261008315D5 /* EpisodesDataSourceImp.swift in Sources */,
 				540BBC4C2BD043D5008315D5 /* CharacterDTO.swift in Sources */,
 				540BBC432BD04259008315D5 /* NetworkClient.swift in Sources */,
 				540BBC1E2BD03A59008315D5 /* RootView.swift in Sources */,
@@ -555,14 +618,19 @@
 				540BBC352BD04047008315D5 /* TabItemRepresentable.swift in Sources */,
 				540BBBF32BD03859008315D5 /* RickAndMortyApp.swift in Sources */,
 				540BBC662BD04F14008315D5 /* AppError.swift in Sources */,
+				540BBC6B2BD050E2008315D5 /* EpisodeListDTO.swift in Sources */,
 				540BBC452BD04317008315D5 /* APIClient.swift in Sources */,
+				540BBC792BD052CD008315D5 /* EpisodeMapper.swift in Sources */,
 				540BBC262BD03BD9008315D5 /* CharactersView.swift in Sources */,
 				540BBC572BD0467B008315D5 /* APIServiceRepresentable.swift in Sources */,
 				540BBC552BD0464C008315D5 /* APIServices.swift in Sources */,
 				540BBC522BD04515008315D5 /* ListInfoDTO.swift in Sources */,
+				540BBC6D2BD051C2008315D5 /* EpisodesViewModel.swift in Sources */,
+				540BBC692BD050D9008315D5 /* EpisodeDTO.swift in Sources */,
 				540BBC212BD03B19008315D5 /* RickMortyTabItem.swift in Sources */,
 				540BBC282BD03BE2008315D5 /* EpisodesView.swift in Sources */,
 				540BBC3B2BD04095008315D5 /* Episode.swift in Sources */,
+				540BBC6F2BD05210008315D5 /* GetAllEpisodes.swift in Sources */,
 				540BBC382BD0406C008315D5 /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

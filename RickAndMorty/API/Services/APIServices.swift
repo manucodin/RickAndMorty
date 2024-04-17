@@ -9,7 +9,8 @@ import Foundation
 
 enum APIServices: APIServiceRepresentable {
     case characters
-    
+    case episodes
+
     var baseURL: String {
         return "https://rickandmortyapi.com/api"
     }
@@ -17,6 +18,7 @@ enum APIServices: APIServiceRepresentable {
     var path: String {
         switch self {
         case .characters: return "\(baseURL)/character"
+        case .episodes: return "\(baseURL)/episode"
         }
     }
 }

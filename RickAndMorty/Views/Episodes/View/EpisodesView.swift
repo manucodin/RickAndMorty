@@ -8,17 +8,30 @@
 import SwiftUI
 
 struct EpisodesView: View {
+    @StateObject var viewModel: EpisodesViewModel
+    
+    init(viewModel: EpisodesViewModel = EpisodesViewModel()) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
         Group {
-            Text(RickMortyTabItem.episodes.title)
+            List(viewModel.episodes) { episode in
+                Text(episode.name).onAppear {
+                    viewModel.loadEpisodes(currentItem: episode)
+                }
+            }
+        }
+        .onAppear {
+            viewModel.loadEpisodes(currentItem: nil)
         }
         .tabItem {
             Label(
-                RickMortyTabItem.episodes.title,
-                systemImage: RickMortyTabItem.episodes.systemImage
+                RickMortyTabItem.characters.title,
+                systemImage: RickMortyTabItem.characters.systemImage
             )
         }
-        .tag(RickMortyTabItem.episodes)
+        .tag(RickMortyTabItem.characters)
     }
 }
 
