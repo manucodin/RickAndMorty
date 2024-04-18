@@ -15,7 +15,7 @@ class CharacterMapper {
         return Character(
             id: id, 
             name: name,
-            status:  "",
+            status:  dto.status ?? "",
             species: dto.species ?? "",
             type: dto.type ?? "",
             gender: dto.gender ?? "",
