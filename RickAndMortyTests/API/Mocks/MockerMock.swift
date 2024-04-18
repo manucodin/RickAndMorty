@@ -9,7 +9,7 @@ import Foundation
 import Mocker
 
 class MockerMock {
-    public static func mockMovieListOK() {
+    public static func mockCharacterListOK() {
         guard let url = URL(string: "https://rickandmortyapi.com/api/character") else { return }
         
         let mock = Mock(url: url, contentType: Mock.DataType.json, statusCode: 200, data: [
