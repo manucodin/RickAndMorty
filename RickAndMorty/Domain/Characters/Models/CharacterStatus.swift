@@ -23,4 +23,12 @@ enum CharacterStatus: String, CaseIterable, Identifiable, Codable {
         case .all: return String(localized: "all")
         }
     }
+    
+    public init(_ value: String) {
+        switch value {
+        case "Alive": self = .alive
+        case "Dead": self = .dead
+        default: self = .unknown
+        }
+    }
 }

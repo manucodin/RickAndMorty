@@ -12,12 +12,18 @@ extension Character {
         return Character(
             id: 1,
             name: "Rick Sanchez",
-            status: "Alive",
+            status: .alive,
             species: "Human",
             type: "",
-            gender: "Male",
-            origin: "",
-            location: "",
+            gender: .male,
+            origin: Origin(
+                name: "Earth (C-137)",
+                url: "https://rickandmortyapi.com/api/location/1"
+            ),
+            location: Location(
+                name: "Citadel of Ricks",
+                url: "https://rickandmortyapi.com/api/location/3"
+            ),
             image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
             url: "https://rickandmortyapi.com/api/character/1",
             episode: [],

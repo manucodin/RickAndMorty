@@ -29,11 +29,6 @@ struct EpisodesView: View {
         .alert(viewModel.errorMessage, isPresented: $viewModel.showError) {
             Button("accept", role: .cancel) {}
         }
-        .searchable(
-            text: $viewModel.searchValue,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: String(localized: "search_prompt_episodes")
-        )
         .autocorrectionDisabled()
         .tabItem {
             Label(

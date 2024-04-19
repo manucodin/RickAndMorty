@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 class EpisodesViewModel: ObservableObject {
-    @Published var searchValue: String = ""
     @Published var errorMessage: String = ""
     @Published var showError: Bool = false
     
@@ -22,19 +21,19 @@ class EpisodesViewModel: ObservableObject {
     func loadEpisodes(currentItem item: Episode?) {
         Task {
             guard let item = item else {
-                requestCharacters()
+                requestEpisodes()
                 return
             }
             
             let thresholdIndex = episodes.index(episodes.endIndex, offsetBy: -10)
             if episodes.firstIndex(where: { $0.name == item.name }) == thresholdIndex {
-                requestCharacters()
+                requestEpisodes()
             }
         }
     }
     
     @MainActor
-    private func requestCharacters() {
+    private func requestEpisodes() {
         guard canLoadMorePages else { return }
         
         Task {

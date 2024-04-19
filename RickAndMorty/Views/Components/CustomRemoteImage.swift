@@ -23,9 +23,7 @@ struct CustomRemoteImage: View {
                 ProgressView()
             }
         }
-        .frame(width: imageSize, height: imageSize)
-        .clipShape(Circle())
-        .shadow(color: .gray, radius: 2, x: 0, y: 2)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }
 

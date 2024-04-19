@@ -17,17 +17,18 @@ struct CharacterItemView: View {
     var body: some View {
         HStack {
             CustomRemoteImage(imageURL: character.image)
-            
+                .frame(width: 60, height: 60)
             VStack() {
-                
                 Text(character.name)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(character.status)
+                Text(character.status.title)
                     .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
-        }.padding()    }
+        }
+        .padding(.vertical, 4)
+        .padding(.leading, -12)
+    }
 }
 
 #Preview {
