@@ -70,6 +70,13 @@
 		548D0E302BD31A140074215F /* Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548D0E2F2BD31A140074215F /* Origin.swift */; };
 		549C25562BD07FE30074C600 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549C25552BD07FE30074C600 /* AppError.swift */; };
 		54FEFF952BD322A600178CDF /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 548D0E352BD3207E0074215F /* Launch Screen.storyboard */; };
+		54FEFF9B2BD3234200178CDF /* CharacterDTO+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFF9A2BD3234200178CDF /* CharacterDTO+Mother.swift */; };
+		54FEFF9D2BD323A900178CDF /* OriginDTO+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFF9C2BD323A900178CDF /* OriginDTO+Mother.swift */; };
+		54FEFF9F2BD323B400178CDF /* LocationDTO+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFF9E2BD323B400178CDF /* LocationDTO+Mother.swift */; };
+		54FEFFA12BD3245300178CDF /* Character+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFFA02BD3245300178CDF /* Character+Mother.swift */; };
+		54FEFFA32BD324C100178CDF /* Origin+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFFA22BD324C100178CDF /* Origin+Mother.swift */; };
+		54FEFFA72BD324DC00178CDF /* Location+Mother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFFA62BD324DC00178CDF /* Location+Mother.swift */; };
+		54FEFFA92BD3255C00178CDF /* CharacterMapperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54FEFFA82BD3255C00178CDF /* CharacterMapperTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +157,13 @@
 		548D0E2F2BD31A140074215F /* Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Origin.swift; sourceTree = "<group>"; };
 		548D0E352BD3207E0074215F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		549C25552BD07FE30074C600 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		54FEFF9A2BD3234200178CDF /* CharacterDTO+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterDTO+Mother.swift"; sourceTree = "<group>"; };
+		54FEFF9C2BD323A900178CDF /* OriginDTO+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OriginDTO+Mother.swift"; sourceTree = "<group>"; };
+		54FEFF9E2BD323B400178CDF /* LocationDTO+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationDTO+Mother.swift"; sourceTree = "<group>"; };
+		54FEFFA02BD3245300178CDF /* Character+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Mother.swift"; sourceTree = "<group>"; };
+		54FEFFA22BD324C100178CDF /* Origin+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Origin+Mother.swift"; sourceTree = "<group>"; };
+		54FEFFA62BD324DC00178CDF /* Location+Mother.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+Mother.swift"; sourceTree = "<group>"; };
+		54FEFFA82BD3255C00178CDF /* CharacterMapperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMapperTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				5423988A2BD1C939004C4C3A /* API */,
+				54FEFF962BD322F400178CDF /* Domain */,
 			);
 			path = RickAndMortyTests;
 			sourceTree = "<group>";
@@ -560,6 +575,7 @@
 		5423988A2BD1C939004C4C3A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				54FEFF992BD3231200178CDF /* Mothers */,
 				5423988E2BD1C991004C4C3A /* Mocks */,
 				542398872BD1C8EE004C4C3A /* NetworkClientTest.swift */,
 			);
@@ -659,6 +675,43 @@
 				549C25552BD07FE30074C600 /* AppError.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		54FEFF962BD322F400178CDF /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				54FEFF972BD3230000178CDF /* Characters */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		54FEFF972BD3230000178CDF /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				54FEFF982BD3230800178CDF /* Mothers */,
+				54FEFFA82BD3255C00178CDF /* CharacterMapperTest.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
+		54FEFF982BD3230800178CDF /* Mothers */ = {
+			isa = PBXGroup;
+			children = (
+				54FEFFA02BD3245300178CDF /* Character+Mother.swift */,
+				54FEFFA22BD324C100178CDF /* Origin+Mother.swift */,
+				54FEFFA62BD324DC00178CDF /* Location+Mother.swift */,
+			);
+			path = Mothers;
+			sourceTree = "<group>";
+		};
+		54FEFF992BD3231200178CDF /* Mothers */ = {
+			isa = PBXGroup;
+			children = (
+				54FEFF9A2BD3234200178CDF /* CharacterDTO+Mother.swift */,
+				54FEFF9E2BD323B400178CDF /* LocationDTO+Mother.swift */,
+				54FEFF9C2BD323A900178CDF /* OriginDTO+Mother.swift */,
+			);
+			path = Mothers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -859,9 +912,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54FEFF9B2BD3234200178CDF /* CharacterDTO+Mother.swift in Sources */,
 				542398882BD1C8EE004C4C3A /* NetworkClientTest.swift in Sources */,
+				54FEFF9D2BD323A900178CDF /* OriginDTO+Mother.swift in Sources */,
 				542398982BD1CA75004C4C3A /* MockerMock.swift in Sources */,
 				5411B30A2BD24F43005BD3A7 /* AppError.swift in Sources */,
+				54FEFF9F2BD323B400178CDF /* LocationDTO+Mother.swift in Sources */,
+				54FEFFA92BD3255C00178CDF /* CharacterMapperTest.swift in Sources */,
+				54FEFFA32BD324C100178CDF /* Origin+Mother.swift in Sources */,
+				54FEFFA12BD3245300178CDF /* Character+Mother.swift in Sources */,
+				54FEFFA72BD324DC00178CDF /* Location+Mother.swift in Sources */,
 				542398952BD1CA03004C4C3A /* MockedData.swift in Sources */,
 				5423989C2BD1CAE8004C4C3A /* NetworkClientConfiguration.swift in Sources */,
 			);
