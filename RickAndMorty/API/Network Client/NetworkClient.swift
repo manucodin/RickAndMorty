@@ -9,19 +9,33 @@ import Foundation
 import Alamofire
 
 class NetworkClient: NetworkClientInterface {
-    func get<T: Codable, P: Codable>(service: APIServiceRepresentable, parameters: P? = nil) async throws -> T {
+    private let sessionManager: Session
+    
+    init(configuration: URLSessionConfiguration = NetworkClientConfiguration.defaultConfiguration) {
+        self.sessionManager = Session(configuration: configuration)
+    }
+    
+    func get<R: Codable>(service: APIServiceRepresentable) async throws -> R {
         do {
-            return try await AF.request(service.path, method: .get, parameters: parameters).serializingDecodable(T.self).value
+            return try await sessionManager.request(service.path, method: .get).validate().serializingDecodable(R.self).value
         } catch let error {
             if error.asAFError?.isResponseSerializationError ?? false {
                 throw AppError.responseError
             }
             
-            if error.asAFError?.isSessionTaskError ?? false {
-                throw AppError.networkError
+            throw AppError.networkError
+        }
+    }
+    
+    func get<R: Codable, P: Codable>(service: APIServiceRepresentable, parameters: P?) async throws -> R {
+        do {
+            return try await sessionManager.request(service.path, method: .get, parameters: parameters).serializingDecodable(R.self).value
+        } catch let error {
+            if error.asAFError?.isResponseSerializationError ?? false {
+                throw AppError.responseError
             }
             
-            throw AppError.unknowError
+            throw AppError.networkError
         }
     }
 }
