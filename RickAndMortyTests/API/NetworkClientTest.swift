@@ -26,11 +26,85 @@ final class NetworkClientTest: XCTestCase {
         try super.tearDownWithError()
     }
 
-    func testHola() async throws {
-        MockerMock.mockMovieListOK()
+    func testMakeRequestWithResponse() async throws {
+        MockerMock.mockCharacterListOK()
         
-        let response: CharactersListDTO? = try await sut.get(service: APIServices.characters)
+        do {
+            let response: CharactersListDTO? = try await sut.get(service: APIServices.characters)
+            XCTAssertNotNil(response, "Expected a response")
+        } catch {
+            XCTFail("Unexpected error")
+        }
+    }
+    
+    func testMakeRequestWithNetworkError() async throws {
+        MockerMock.mockCharacterList404Error()
         
-        XCTAssertNotNil(response, "Expected a response")
+        do {
+            let _: CharactersListDTO? = try await sut.get(service: APIServices.characters)
+            XCTFail("Expected error")
+        } catch let error {
+            if let error = error as? RickAndMorty.AppError {
+                XCTAssertTrue(error == .networkError)
+            } else {
+                XCTFail("Expected network error")
+            }
+        }
+    }
+    
+    func testMakeRequestWithError500() async throws {
+        MockerMock.mockCharacterList500Error()
+        
+        do {
+            let _: CharactersListDTO? = try await sut.get(service: APIServices.characters)
+            XCTFail("Expected error")
+        } catch let error {
+            if let error = error as? RickAndMorty.AppError {
+                XCTAssertTrue(error == .networkError)
+            } else {
+                XCTFail("Expected network error")
+            }
+        }
+    }
+    
+    func testMakeRequestWithResponseAndParameters() async throws {
+        MockerMock.mockCharacterListOK()
+        
+        do {
+            let response: CharactersListDTO? = try await sut.get(service: APIServices.characters, parameters: CharactersQueryDTO(page: 1))
+            XCTAssertNotNil(response, "Expected a response")
+        } catch {
+            XCTFail("Unexpected error")
+        }
+    }
+    
+    func testMakeRequestWithNetworkErrorAndParameters() async throws {
+        MockerMock.mockCharacterList404Error()
+        
+        do {
+            let _: CharactersListDTO? = try await sut.get(service: APIServices.characters, parameters: CharactersQueryDTO(page: 1))
+            XCTFail("Expected error")
+        } catch let error {
+            if let error = error as? RickAndMorty.AppError {
+                XCTAssertTrue(error == .networkError)
+            } else {
+                XCTFail("Expected network error")
+            }
+        }
+    }
+    
+    func testMakeRequestWithError500AndParameters() async throws {
+        MockerMock.mockCharacterList500Error()
+        
+        do {
+            let response: CharactersListDTO? = try await sut.get(service: APIServices.characters, parameters: CharactersQueryDTO(page: 1))
+            XCTFail("Expected error")
+        } catch let error {
+            if let error = error as? RickAndMorty.AppError {
+                XCTAssertTrue(error == .networkError)
+            } else {
+                XCTFail("Expected network error")
+            }
+        }
     }
 }

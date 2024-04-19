@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:RickAndMorty.xcodeproj",
+          "identifier" : "540BBBEE2BD03859008315D5",
+          "name" : "RickAndMorty"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:RickAndMorty.xcodeproj",
       "identifier" : "540BBBEE2BD03859008315D5",

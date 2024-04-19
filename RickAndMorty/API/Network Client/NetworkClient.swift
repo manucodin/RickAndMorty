@@ -17,17 +17,13 @@ class NetworkClient: NetworkClientInterface {
     
     func get<R: Codable>(service: APIServiceRepresentable) async throws -> R {
         do {
-            return try await sessionManager.request(service.path, method: .get).serializingDecodable(R.self).value
+            return try await sessionManager.request(service.path, method: .get).validate().serializingDecodable(R.self).value
         } catch let error {
             if error.asAFError?.isResponseSerializationError ?? false {
                 throw AppError.responseError
             }
             
-            if error.asAFError?.isSessionTaskError ?? false {
-                throw AppError.networkError
-            }
-            
-            throw AppError.unknowError
+            throw AppError.networkError
         }
     }
     
@@ -39,11 +35,7 @@ class NetworkClient: NetworkClientInterface {
                 throw AppError.responseError
             }
             
-            if error.asAFError?.isSessionTaskError ?? false {
-                throw AppError.networkError
-            }
-            
-            throw AppError.unknowError
+            throw AppError.networkError
         }
     }
 }

@@ -47,6 +47,7 @@
 		540BBC802BD05D05008315D5 /* Episode+PreviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC7F2BD05D05008315D5 /* Episode+PreviewContent.swift */; };
 		540BBC842BD05D1A008315D5 /* Character+PreviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC832BD05D1A008315D5 /* Character+PreviewContent.swift */; };
 		540BBC882BD05F33008315D5 /* CustomRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540BBC872BD05F33008315D5 /* CustomRemoteImage.swift */; };
+		5411B30A2BD24F43005BD3A7 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549C25552BD07FE30074C600 /* AppError.swift */; };
 		542398882BD1C8EE004C4C3A /* NetworkClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542398872BD1C8EE004C4C3A /* NetworkClientTest.swift */; };
 		5423988D2BD1C955004C4C3A /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 5423988C2BD1C955004C4C3A /* Mocker */; };
 		542398912BD1C9EC004C4C3A /* characters_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 542398902BD1C9EC004C4C3A /* characters_list.json */; };
@@ -816,6 +817,7 @@
 			files = (
 				542398882BD1C8EE004C4C3A /* NetworkClientTest.swift in Sources */,
 				542398982BD1CA75004C4C3A /* MockerMock.swift in Sources */,
+				5411B30A2BD24F43005BD3A7 /* AppError.swift in Sources */,
 				542398952BD1CA03004C4C3A /* MockedData.swift in Sources */,
 				5423989C2BD1CAE8004C4C3A /* NetworkClientConfiguration.swift in Sources */,
 			);
