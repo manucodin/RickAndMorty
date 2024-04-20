@@ -14,7 +14,7 @@ struct CharactersView: View {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    var body: some View {
+    var body: some View {        
         NavigationStack {
             List(viewModel.characters) { character in
                 NavigationLink {

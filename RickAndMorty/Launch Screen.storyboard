@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="BackgroundPrimary"/>
                         <constraints>
                             <constraint firstItem="Xk5-Uz-Ba9" firstAttribute="top" secondItem="pyG-jp-KVR" secondAttribute="bottom" constant="8" id="M9i-2A-cLx"/>
                             <constraint firstItem="pyG-jp-KVR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OY7-8d-LwV"/>
@@ -46,5 +47,8 @@
     </scenes>
     <resources>
         <image name="rick_morty" width="840" height="939"/>
+        <namedColor name="BackgroundPrimary">
+            <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
