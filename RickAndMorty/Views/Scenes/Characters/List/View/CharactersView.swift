@@ -14,16 +14,17 @@ struct CharactersView: View {
         self._viewModel = StateObject(wrappedValue: viewModel)
     }
     
-    var body: some View {        
+    var body: some View {
         NavigationStack {
             List(viewModel.characters) { character in
-                NavigationLink {
-                    CharactersDetailView(character: character)
-                } label: {
+                NavigationLink(value: character) {
                     CharacterItemView(character: character).onAppear {
                         viewModel.loadCharacters(currentItem: character)
                     }
                 }
+            }
+            .navigationDestination(for: Character.self) { character in
+                CharactersDetailView(character: character)
             }
             .onAppear {
                 viewModel.loadCharacters(currentItem: nil)
