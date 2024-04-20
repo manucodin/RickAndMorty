@@ -34,7 +34,7 @@ struct EpisodesView: View {
             Label(
                 RickMortyTabItem.episodes.title,
                 systemImage: RickMortyTabItem.episodes.systemImage
-            )
+            ).accessibilityIdentifier("episodes_tab_item")
         }
         .tag(RickMortyTabItem.episodes)
     }

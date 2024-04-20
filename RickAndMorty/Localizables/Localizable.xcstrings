@@ -355,23 +355,6 @@
         }
       }
     },
-    "search_prompt_episodes" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Search episode"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Buscar capítulo"
-          }
-        }
-      }
-    },
     "status" : {
       "localizations" : {
         "en" : {
