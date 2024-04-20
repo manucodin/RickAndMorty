@@ -15,15 +15,21 @@ class CharacterMapper {
         return Character(
             id: id, 
             name: name,
-            status:  dto.status ?? "",
+            status: CharacterStatus(dto.status ?? ""),
             species: dto.species ?? "",
             type: dto.type ?? "",
-            gender: dto.gender ?? "",
-            origin: dto.origin?.name ?? "",
-            location: dto.location?.name ?? "",
+            gender: CharacterGender(dto.gender ?? ""),
+            origin: Origin(
+                name: dto.origin?.name ?? "",
+                url: dto.origin?.url ?? ""
+            ),
+            location: Location(
+                name: dto.location?.name ?? "",
+                url: dto.location?.url ?? ""
+            ),
             image: dto.image ?? "",
             url: dto.url ?? "",
-            episode: [],
+            episode: dto.episode ?? [],
             created: dto.created ?? ""
         )
     }

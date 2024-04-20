@@ -46,12 +46,14 @@ struct CharactersView: View {
                         Picker(selection: $viewModel.characterStatus) {
                             ForEach(CharacterStatus.allCases) { status in
                                 Text(status.title)
+                                    .accessibilityIdentifier(status.accessibilityIdentifier)
                             }
                         } label: {
                             Text("filter_by")
                         }
                     }, label: {
                         Image(systemName: "line.3.horizontal.decrease.circle")
+                            .accessibilityIdentifier("filter_button")
                     })
                 }
             }
@@ -60,7 +62,7 @@ struct CharactersView: View {
             Label(
                 RickMortyTabItem.characters.title,
                 systemImage: RickMortyTabItem.characters.systemImage
-            )
+            ).accessibilityIdentifier("characters_tab_item")
         }
         .tag(RickMortyTabItem.characters)
     }

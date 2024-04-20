@@ -13,7 +13,7 @@ struct RootView: View {
         TabView {
             CharactersView()
             EpisodesView()
-        }
+        }.accessibilityIdentifier("tab_bar")
     }
 }
 
